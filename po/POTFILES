@@ -1,0 +1,6 @@
+data/com.brooker.tool.desktop.in
+data/com.brooker.tool.metainfo.xml.in
+data/com.brooker.tool.gschema.xml
+src/main.py
+src/window.py
+src/window.ui
