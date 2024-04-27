@@ -7,7 +7,7 @@ const openFileDialog = () => {
   dialog.showOpenDialog({
     properties: ['openFile'],
     filters: [
-      { name: 'Text Files', extensions: ['txt', 'js', 'html','json'] },
+      { name: 'Text Files', extensions: ['txt', 'js', 'html', 'json'] },
       { name: 'All Files', extensions: ['*'] },
     ],
   }).then(result => {
@@ -30,18 +30,18 @@ const createWindow = () => {
   });
 
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
-
+  // mainWindow.webContents.openDevTools();
   const menuTemplate = [
     {
       label: 'File',
       submenu: [
-        {
-          label: 'Open File',
-          accelerator: 'CmdOrCtrl+O',
-          click() {
-            openFileDialog();
-          },
-        },
+        { label: 'New File', accelerator: 'CmdOrCtrl+N', click() { /* Handle new file creation */ } },
+        { label: 'Open File', accelerator: 'CmdOrCtrl+O', click() { openFileDialog(); } },
+        { type: 'separator' },
+        { label: 'Save', accelerator: 'CmdOrCtrl+S', click() { /* Handle file saving */ } },
+        { label: 'Save As...', accelerator: 'CmdOrCtrl+Shift+S', click() { /* Handle file saving as */ } },
+        { type: 'separator' },
+        { label: 'Exit', accelerator: 'CmdOrCtrl+Q', click() { app.quit(); } },
       ],
     },
   ];
