@@ -3,12 +3,11 @@ const path = require('node:path');
 const { dialog } = require('electron');
 
 let mainWindow;
-
 const openFileDialog = () => {
   dialog.showOpenDialog({
     properties: ['openFile'],
     filters: [
-      { name: 'Text Files', extensions: ['txt', 'js', 'html'] },
+      { name: 'Text Files', extensions: ['txt', 'js', 'html','json'] },
       { name: 'All Files', extensions: ['*'] },
     ],
   }).then(result => {
