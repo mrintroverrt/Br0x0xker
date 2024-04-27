@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=br0x0xker
-Exec=br0x0xker
-Icon=com.brooker.tool
-Terminal=false
-Type=Application
-Categories=GTK;
-StartupNotify=true
