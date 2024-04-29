@@ -44,6 +44,12 @@ const createWindow = () => {
         { label: 'Exit', accelerator: 'CmdOrCtrl+Q', click() { app.quit(); } },
       ],
     },
+    {
+      label: 'Help',
+      submenu: [
+        { label: 'About', click() { Aboutwindow(); } }, // Add this line
+      ],
+    },
   ];
 
   const menu = Menu.buildFromTemplate(menuTemplate);
@@ -65,7 +71,17 @@ app.on('window-all-closed', () => {
     app.quit();
   }
 });
-
+const Aboutwindow = () => {
+  app.setAboutPanelOptions({
+    applicationName: 'Br0x0xker',
+    applicationVersion : '1.0.0',
+    copyright: 'Br0x0xker',
+    credits : 'Br0x0xker',
+    authors : ['prasaanth'],
+    iconPath : path.join(__dirname,'./images/brooker.svg'),
+  });
+  app.showAboutPanel();
+}
 ipcMain.on('request-file-content', (event, filePath) => {
   const fs = require('fs');
   fs.readFile(filePath, 'utf-8', (err, data) => {

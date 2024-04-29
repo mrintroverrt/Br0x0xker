@@ -1,9 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif;
-  margin: auto;
-  max-width: 38rem;
-  padding: 2rem;
-  background-color: rgb(26, 25, 25);
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  background-color: black;
   color: white;
+}
+
+.mainlogo {
+  padding-top: 6px;
+  padding-left: 2px;
+  width: 120px;
+}
+
+/* Style checkboxes */
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  cursor: pointer;
+  padding-left: 25px;
+  position: relative;
+}
+
+input[type="checkbox"] + label:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #555;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+input[type="checkbox"]:checked + label:before {
+  background-color: #007bff; /* Change color when checked */
+}
+
+/* Add checkmark */
+input[type="checkbox"] + label:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+input[type="checkbox"]:checked + label:after {
+  display: block;
 }
