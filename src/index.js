@@ -1,7 +1,7 @@
 const { app, BrowserWindow, Menu, ipcMain } = require('electron');
 const path = require('node:path');
 const { dialog } = require('electron');
-
+const openandWrite = require('./filemanupulation.js');
 let mainWindow;
 const openFileDialog = () => {
   dialog.showOpenDialog({
@@ -35,7 +35,7 @@ const createWindow = () => {
     {
       label: 'File',
       submenu: [
-        { label: 'New File', accelerator: 'CmdOrCtrl+N', click() { /* Handle new file creation */ } },
+        { label: 'New File', accelerator: 'CmdOrCtrl+N', click() { openandWrite() } },
         { label: 'Open File', accelerator: 'CmdOrCtrl+O', click() { openFileDialog(); } },
         { type: 'separator' },
         { label: 'Save', accelerator: 'CmdOrCtrl+S', click() { /* Handle file saving */ } },
